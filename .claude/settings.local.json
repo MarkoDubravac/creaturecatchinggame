@@ -10,7 +10,8 @@
       "Bash(java:*)",
       "Read(//c/Program Files/Java/**)",
       "Bash(dir:*)",
-      "Bash(mvnw clean install:*)"
+      "Bash(mvnw clean install:*)",
+      "Bash(findstr /i \"security\")"
     ],
     "deny": [],
     "ask": []
