@@ -20,13 +20,14 @@ class CorsConfig {
         // Handle wildcard or specific origins
         if (allowedOrigins == "*") {
             configuration.allowedOriginPatterns = listOf("*")
+            configuration.allowCredentials = false  // Must be false for wildcard
         } else {
             configuration.allowedOrigins = allowedOrigins.split(",").map { it.trim() }
+            configuration.allowCredentials = true
         }
 
         configuration.allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")
         configuration.allowedHeaders = listOf("*")
-        configuration.allowCredentials = true
         configuration.maxAge = 3600L
 
         val source = UrlBasedCorsConfigurationSource()
