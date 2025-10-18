@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: pokemon-catcher
+  datasource:
+    url: ${DATABASE_URL:jdbc:h2:mem:pokemondb}
+    driver-class-name: ${DATABASE_DRIVER:org.h2.Driver}
+    username: ${DATABASE_USERNAME:sa}
+    password: ${DATABASE_PASSWORD:}
+  h2:
+    console:
+      enabled: ${H2_CONSOLE_ENABLED:true}
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: ${HIBERNATE_DIALECT:org.hibernate.dialect.H2Dialect}
+
+server:
+  port: ${PORT:8080}
+
+pokeapi:
+  base-url: https://pokeapi.co/api/v2
+
+catching:
+  cooldown-minutes: ${COOLDOWN_MINUTES:1}
+
+jwt:
+  secret: ${JWT_SECRET:your-super-secret-key-change-this-in-production-minimum-256-bits}
+  expiration: ${JWT_EXPIRATION:86400000}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000,http://localhost:5173}

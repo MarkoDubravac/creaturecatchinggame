@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvnw.cmd clean:*)",
+      "Bash(mvn clean:*)",
+      "Bash(mvn:*)",
+      "Bash(npm install)",
+      "Bash(export:*)",
+      "Bash(export PATH=\"$JAVA_HOME/bin:$PATH\")",
+      "Bash(java:*)",
+      "Read(//c/Program Files/Java/**)",
+      "Bash(dir:*)",
+      "Bash(mvnw clean install:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
