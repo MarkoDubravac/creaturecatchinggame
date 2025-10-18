@@ -19,15 +19,6 @@ class AuthController(
     private val pokemonCatchingService: PokemonCatchingService
 ) {
 
-    @Value("\${cors.allowed-origins}")
-    private lateinit var allowedOrigins: String
-
-    @CrossOrigin(origins = ["http://localhost:3000", "http://localhost:5173"])
-    @GetMapping
-    fun getCorsOrigins(): String {
-        return allowedOrigins
-    }
-
     @PostMapping("/register")
     fun register(@RequestBody request: RegisterRequest): ResponseEntity<AuthResponse> {
         if (request.username.isBlank() || request.password.isBlank() || request.displayName.isBlank()) {

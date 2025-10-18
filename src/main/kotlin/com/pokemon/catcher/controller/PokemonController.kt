@@ -1,4 +1,4 @@
-package com.pokemon.catcher.controller
+package com.pokemon.catcher.nocontroller
 
 import com.pokemon.catcher.dto.CatchResponse
 import com.pokemon.catcher.dto.CatchStatusResponse
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/pokemon")
-@CrossOrigin(origins = ["http://localhost:3000", "http://localhost:5173"])
 class PokemonController(
     private val pokeApiService: PokeApiService,
     private val pokemonCatchingService: PokemonCatchingService

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = ["http://localhost:3000", "http://localhost:5173"])
 class UserController(
     private val userService: UserService,
     private val pokemonCatchingService: PokemonCatchingService
